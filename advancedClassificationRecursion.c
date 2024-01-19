@@ -1,18 +1,4 @@
-#include <stdio.h>
-
-int numDigits(int);
-int isPalindromeHelper(int* , int, int);
-int isPalindrome(int);
-int isArmstrong(int);
-
-
-int main()
-{
-    int x;
-    scanf("%d", &x);
-    printf("%d\n", isPalindrome(x));
-    return 0;
-}
+#include "numClass.h"
 
 int isPalindrome(int num)
 {
@@ -36,13 +22,21 @@ int isPalindromeHelper(int* num, int i, int j)
     }
     return 0;
 }
-int numDigits(int num)
+
+int getArmstrongNumber(int num, int len)
 {
-    int ans = 0;
-    while (num != 0)
+    if (num == 0)
     {
-        num = num / 10;
-        ans++;
+        return 0;
     }
-    return ans;
+    return pow(num%10, len) + getArmstrongNumber(num/10, len);
 }
+
+int isArmstrong(int num)
+{
+    int nd = numDigits(num);
+    int armNum = getArmstrongNumber(num, nd);
+    return num == armNum;
+}
+
+

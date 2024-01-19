@@ -1,11 +1,12 @@
 #include <stdio.h>
-int isPrime(int);
+#include "numClass.h"
 
 int main() {
     int x;
     printf("Hello, World!\n");
     printf("Enter a number: ");
     scanf("%d", &x);
-    printf("%d\n", isPrime(x));
+    printf("Armstrong number is: %d\n", getArmstrongNumber(x, numDigits(x)));
+    printf("%d\n", isArmstrong(x));
     return 0;
 }
