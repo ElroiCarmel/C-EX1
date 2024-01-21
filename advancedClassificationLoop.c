@@ -8,7 +8,7 @@ int isArmstrong(int x)
     while (xc != 0)
     {
         int ld = xc % 10;
-        sum = sum + pow(ld, dn);
+        sum = sum + power(ld, dn);
         if (sum > x) return 0;
         xc = xc/10;
     }

@@ -46,7 +46,7 @@ int numDigits(int num)
     }
     return ans;
 }
-int pow(int a, int b)
+int power(int a, int b)
 {
     if (a==0 || a==1) return a;
     if (b == 0) return 1;

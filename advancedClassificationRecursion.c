@@ -29,7 +29,7 @@ int getArmstrongNumber(int num, int len)
     {
         return 0;
     }
-    return pow(num%10, len) + getArmstrongNumber(num/10, len);
+    return power(num % 10, len) + getArmstrongNumber(num / 10, len);
 }
 
 int isArmstrong(int num)
