@@ -2,11 +2,43 @@
 #include "numClass.h"
 
 int main() {
-    int x;
-    printf("Hello, World!\n");
-    printf("Enter a number: ");
-    scanf("%d", &x);
-    printf("Armstrong number is: %d\n", getArmstrongNumber(x, numDigits(x)));
-    printf("%d\n", isArmstrong(x));
+    int a, b, curr;
+    scanf("%d%d", &a, &b);
+    printf("The Armstrong numbers are:");
+    for (curr = a; curr <= b; curr++)
+    {
+        if (isArmstrong(curr))
+        {
+            printf(" %d", curr);
+        }
+    }
+    printf("\n");
+    printf("The Palindromes are:");
+    for (curr = a; curr <= b; curr++)
+    {
+        if (isPalindrome(curr))
+        {
+            printf(" %d", curr);
+        }
+    }
+    printf("\n");
+    printf("The Prime numbers are:");
+    for (curr = a; curr <= b; curr++)
+    {
+        if (isPrime(curr))
+        {
+            printf(" %d", curr);
+        }
+    }
+    printf("\n");
+    printf("The Strong numbers are:");
+    for (curr = a; curr <= b; curr++)
+    {
+        if (isStrong(curr))
+        {
+            printf(" %d", curr);
+        }
+    }
+    printf("\n");
     return 0;
 }
