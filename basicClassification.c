@@ -2,8 +2,8 @@
 
 int isPrime(int num)
 {
-    if (num < 2) return 0;
-    if (num == 2) return 1;
+    if (num < 1) return 0;
+    if (num == 2 || num == 1) return 1;
     if (num % 2 == 0) return 0;
     int i;
     for (i = 3; i*i <= num; i+=2)
