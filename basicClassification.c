@@ -15,6 +15,7 @@ int isPrime(int num)
 
 int isStrong(int num)
 {
+    if (num == 0) return 0;
     int check = 0, numCopy = num;
     while (num != 0)
     {
