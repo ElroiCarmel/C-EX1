@@ -2,15 +2,16 @@ CC = gcc
 FLAGS = -Wall -g
 LIB_LOOP_OBJ = basicClassification.o advancedClassificationLoop.o
 LIB_REC_OBJ = basicClassification.o advancedClassificationRecursion.o
+DEPS = numClass.h
 CLEAN_FILES = *.o *.a *.so mains maindloop maindrec
 
 all : loops recursives recursived loopd mains maindloop maindrec
 mains : main.o libclassrec.a
-	$(CC) $(FLAGS) -o mains  main.o libclassrec.a
+	$(CC) $(FLAGS) -o $@  main.o libclassrec.a
 maindloop : main.o libclassloops.so
-	$(CC) $(FLAGS) -o maindloop main.o ./libclassloops.so
+	$(CC) $(FLAGS) -o $@ main.o ./libclassloops.so
 maindrec : main.o libclassrec.so
-	$(CC) $(FLAGS) -o maindrec main.o ./libclassrec.so
+	$(CC) $(FLAGS) -o $@ main.o ./libclassrec.so
 loops : libclassloops.a
 recursives : libclassrec.a
 recursived : libclassrec.so
@@ -23,8 +24,8 @@ libclassrec.so : $(LIB_REC_OBJ)
 	$(CC) -shared -o $@ $^
 libclassloops.so : $(LIB_LOOP_OBJ)
 	$(CC) -shared -o $@ $^
-%.o : %.c numClass.h
-	$(CC) $(FLAGS) -c $<
+%.o : %.c $(DEPS)
+	$(CC) $(FLAGS) -c $< -o $@
 
 .PHONY : clean
 clean:
