@@ -27,6 +27,7 @@ libclassloops.so : $(LIB_LOOP_OBJ)
 %.o : %.c $(DEPS)
 	$(CC) $(FLAGS) -c $< -o $@
 
-.PHONY : clean
+.PHONY : clean all loops recursives recursived loopd
+
 clean:
 	rm -f $(CLEAN_FILES)
