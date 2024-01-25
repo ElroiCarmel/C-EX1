@@ -25,7 +25,7 @@ libclassrec.so : $(LIB_REC_OBJ)
 libclassloops.so : $(LIB_LOOP_OBJ)
 	$(CC) -shared -o $@ $^
 %.o : %.c $(DEPS)
-	$(CC) $(FLAGS) -c $< -o $@
+	$(CC) $(FLAGS) -fPIC -c $< -o $@
 
 .PHONY : clean all loops recursives recursived loopd
 
