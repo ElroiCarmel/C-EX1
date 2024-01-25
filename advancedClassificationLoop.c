@@ -3,6 +3,7 @@
 
 int isArmstrong(int x)
 {
+    if (x < 0) return 0;
     int dn = numDigits(x);
     int sum = 0, xc = x;
     while (xc != 0)
@@ -18,6 +19,7 @@ int isArmstrong(int x)
 
 int isPalindrome(int num)
 {
+    if (num < 0) return 0;
     int nd = numDigits(num);
     int numArr[nd];
     int i = 0;

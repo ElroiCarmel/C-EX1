@@ -2,6 +2,7 @@
 
 int isPalindrome(int num)
 {
+    if (num < 0) return 0;
     int nd = numDigits(num);
     int numArr[nd];
     int i;
@@ -34,6 +35,7 @@ int getArmstrongNumber(int num, int len)
 
 int isArmstrong(int num)
 {
+    if (num < 0) return 0;
     int nd = numDigits(num);
     int armNum = getArmstrongNumber(num, nd);
     return num == armNum;
