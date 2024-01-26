@@ -7,5 +7,5 @@ int numDigits(int);
 int power(int, int);
 int factorial(int);
 int isPalindromeHelper(int* , int, int);
-int getArmstrongNumber(int, int);
+int isArmstrongHelper(int, int, int);
 
